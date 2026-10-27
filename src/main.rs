@@ -23,8 +23,10 @@ fn main() -> io::Result<()> {
 
         match input.trim() {
             "1" => {
-                let expression = algebra::bExp::boolean_expression();
-                println!("  {}", expression);
+                for _ in 0..10 {
+                    let expression = algebra::b_exp::boolean_expression();
+                    println!("{}", expression);
+                }
             }
             "2" => println!("WIP"),
             "0" => {
