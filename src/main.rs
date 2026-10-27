@@ -1,3 +1,5 @@
+mod algebra;
+
 use std::io::{self, Write};
 
 fn main() -> io::Result<()> {
@@ -6,7 +8,7 @@ fn main() -> io::Result<()> {
         println!("==========================================");
         println!("  CFKATG - Generator");
         println!("==========================================");
-        println!("  [1] Generate test cases");
+        println!("  [1] Generate test");
         println!("  [2] Configure control-flow guards");
         println!("  [0] Exit");
         println!("==========================================");
@@ -20,10 +22,13 @@ fn main() -> io::Result<()> {
         }
 
         match input.trim() {
-            "1" => println!("Test generation WIP"),
+            "1" => {
+                let expression = algebra::bExp::boolean_expression();
+                println!("  {}", expression);
+            }
             "2" => println!("WIP"),
             "0" => {
-                println!("Exiting CFKATG.");
+                println!("Exiting");
                 break;
             }
             _ => println!("Invalid selection. Try again."),
